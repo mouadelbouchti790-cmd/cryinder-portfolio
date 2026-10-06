@@ -171,16 +171,16 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-sm rounded-3xl border border-white/10 bg-[#0a0a0b] p-6 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
+        className="w-full max-w-sm rounded-3xl border border-[rgba(255,255,255,0.08)] bg-[#111827] p-6 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
       >
         {/* Header */}
         <div className="mb-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-[#141414]">
+            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-[rgba(255,255,255,0.06)]">
               {holding.logoUrl ? (
                 <img src={holding.logoUrl} alt={holding.symbol} className="h-8 w-8 object-contain" />
               ) : (
-                <span className="text-lg font-black text-white/30">{holding.symbol[0]}</span>
+                <span className="text-lg font-black text-[#E5E7EB]">{holding.symbol[0]}</span>
               )}
             </div>
             <div className="min-w-0">
@@ -206,9 +206,9 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
               initial={{ scale: 0.7, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/[0.08]"
+              className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-[#10B981]/30 bg-[rgba(16,185,129,0.12)]"
             >
-              <Check className="h-8 w-8 text-emerald-400" aria-hidden="true" />
+              <Check className="h-8 w-8 text-[#10B981]" aria-hidden="true" />
             </motion.div>
             <div className="mb-1 text-lg font-extrabold">Sold {holding.symbol}</div>
             <p className="mb-1 text-sm text-white/55">
@@ -225,7 +225,7 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
             </a>
             <button
               onClick={onClose}
-              className="min-h-[48px] w-full rounded-2xl bg-white text-sm font-extrabold text-black transition-colors hover:bg-white/90"
+              className="min-h-[48px] w-full rounded-2xl bg-[#3B82F6] text-sm font-extrabold text-white transition-colors hover:bg-[#2563EB]"
             >
               Done
             </button>
@@ -280,7 +280,7 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
                 <button
                   onClick={() => handlePercent(100)}
                   disabled={swapping}
-                  className="shrink-0 rounded-lg bg-white px-2.5 py-1 text-xs font-bold text-black transition-colors hover:bg-white/90 disabled:opacity-40"
+                  className="shrink-0 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.06)] px-2.5 py-1 text-xs font-bold text-[#F9FAFB] transition-colors hover:border-[rgba(255,255,255,0.16)] disabled:opacity-40"
                 >
                   Max
                 </button>
@@ -294,7 +294,7 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
                       onClick={() => handlePercent(p)}
                       disabled={swapping}
                       className={`flex-1 rounded-lg py-1.5 text-[11px] font-bold transition-colors disabled:opacity-40 ${
-                        active ? 'bg-white text-black' : 'bg-white/[0.05] text-white/55 hover:bg-white/[0.09]'
+                        active ? 'bg-[#3B82F6] text-white' : 'bg-white/[0.05] text-white/55 hover:bg-white/[0.09]'
                       }`}
                     >
                       {p}%
@@ -303,7 +303,7 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
                 })}
               </div>
               {!isValidAmount && amountNum > holding.balance && (
-                <p className="mt-1.5 text-[11px] font-semibold text-[#E0827A]">Amount exceeds balance.</p>
+                <p className="mt-1.5 text-[11px] font-semibold text-[#EF4444]">Amount exceeds balance.</p>
               )}
             </div>
 
@@ -326,7 +326,7 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
                     <span className="text-sm font-bold text-white/55">SOL</span>
                   </>
                 ) : quoteState === 'error' ? (
-                  <span className="text-sm font-semibold text-[#E0827A]">{quoteError}</span>
+                  <span className="text-sm font-semibold text-[#EF4444]">{quoteError}</span>
                 ) : (
                   <span className="text-sm font-medium text-white/40">Enter an amount</span>
                 )}
@@ -335,7 +335,7 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
                 <div className="mt-2 text-[11px] text-white/45">
                   Min received: {formatSol(parseInt(quote.otherAmountThreshold))} SOL
                   {quote.priceImpactPct != null && (
-                    <span className={`ml-2 ${quote.priceImpactPct > 2 ? 'text-[#E0827A]' : 'text-white/45'}`}>
+                    <span className={`ml-2 ${quote.priceImpactPct > 2 ? 'text-[#EF4444]' : 'text-white/45'}`}>
                       Impact {quote.priceImpactPct.toFixed(2)}%
                     </span>
                   )}
@@ -399,7 +399,7 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
             <button
               onClick={handleSell}
               disabled={sellDisabled}
-              className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-white text-[15px] font-extrabold text-black shadow-[0_4px_20px_rgba(255,255,255,0.15)] transition-all hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-[#3B82F6] text-[15px] font-extrabold text-white shadow-[0_4px_20px_rgba(59,130,246,0.35)] transition-all hover:bg-[#2563EB] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >
               {swapState === 'signing' && 'Approve in wallet…'}
               {swapState === 'executing' && 'Processing sell…'}
@@ -408,8 +408,8 @@ export default function SellModal({ holding, onClose, onSuccess }: SellModalProp
             </button>
 
             {swapState === 'error' && swapError && (
-              <div className="mt-3 flex items-start gap-2 rounded-xl border border-[#E0827A]/20 bg-[#E0827A]/[0.04] px-3 py-2.5">
-                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#E0827A]" aria-hidden="true" />
+              <div className="mt-3 flex items-start gap-2 rounded-xl border border-[#EF4444]/30 bg-[rgba(239,68,68,0.12)] px-3 py-2.5">
+                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#EF4444]" aria-hidden="true" />
                 <span className="text-[11px] leading-relaxed text-white/65">{swapError}</span>
               </div>
             )}

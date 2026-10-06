@@ -99,7 +99,7 @@ export default function EditUsernameModal({
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-[400px] rounded-3xl border border-white/[0.08] bg-[#0a0a0a] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+            className="w-full max-w-[400px] rounded-3xl border border-[rgba(255,255,255,0.08)] bg-[#111827] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
           >
             <div className="mb-5 flex items-center justify-between">
               <h2 className="text-[20px] font-black tracking-[-0.02em] text-white">
@@ -147,7 +147,7 @@ export default function EditUsernameModal({
                       autoComplete="off"
                       spellCheck={false}
                       disabled={submitting}
-                      className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 py-3.5 text-[15px] font-medium text-white placeholder-white/15 outline-none transition-colors focus:border-white/20 focus:bg-white/[0.05] disabled:opacity-50"
+                      className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 py-3.5 text-[15px] font-medium text-white placeholder-white/15 outline-none transition-colors focus:border-[#3B82F6]/50 focus:bg-white/[0.05] disabled:opacity-50"
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[11px] text-white/15">
                       {username.length}/20
@@ -158,7 +158,7 @@ export default function EditUsernameModal({
                     <motion.p
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="mt-2.5 text-[12px] font-medium text-[#E0827A]"
+                      className="mt-2.5 text-[12px] font-medium text-[#EF4444]"
                     >
                       {error}
                     </motion.p>
@@ -170,11 +170,11 @@ export default function EditUsernameModal({
                   whileTap={{ scale: 0.97 }}
                   onClick={handleSubmit}
                   disabled={submitting || username.length < 3}
-                  className="mb-2 w-full rounded-2xl bg-white py-3.5 text-[15px] font-extrabold text-black shadow-[0_4px_20px_rgba(255,255,255,0.1)] transition-opacity disabled:opacity-30"
+                  className="mb-2 w-full rounded-2xl bg-[#3B82F6] py-3.5 text-[15px] font-extrabold text-white shadow-[0_4px_20px_rgba(59,130,246,0.35)] transition-colors hover:bg-[#2563EB] disabled:opacity-30"
                 >
                   {submitting ? (
                     <span className="flex items-center justify-center gap-2">
-                      <span className="h-4 w-4 rounded-full border-2 border-black/20 border-t-black/70 animate-spin" />
+                      <span className="h-4 w-4 rounded-full border-2 border-white/20 border-t-white animate-spin" />
                       Saving...
                     </span>
                   ) : (

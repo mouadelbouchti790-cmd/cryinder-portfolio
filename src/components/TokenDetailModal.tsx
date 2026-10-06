@@ -120,7 +120,7 @@ export default function TokenDetailModal({ holding, cpBalance, onClose }: TokenD
             </div>
 
             {/* ── Mini chart ──────────────────────────────────────── */}
-            <div className="mt-5 rounded-[4px] border border-white/[0.08] bg-[#010409] p-4">
+            <div className="mt-5 rounded-[4px] border border-white/[0.08] bg-[#0B0F19] p-4">
               {hasChart ? (
                 <>
                   <div className="mb-2 flex items-center justify-between">
@@ -147,7 +147,7 @@ export default function TokenDetailModal({ holding, cpBalance, onClose }: TokenD
 
             {/* ── Balance + value + CP ────────────────────────────── */}
             <div className="mt-3 grid grid-cols-3 gap-2">
-              <div className="rounded-[4px] border border-white/[0.08] bg-[#010409] px-3 py-3">
+              <div className="rounded-[4px] border border-white/[0.08] bg-[#0B0F19] px-3 py-3">
                 <div className="text-[10px] font-extrabold uppercase tracking-[0.1em] text-white/40">
                   Balance
                 </div>
@@ -155,7 +155,7 @@ export default function TokenDetailModal({ holding, cpBalance, onClose }: TokenD
                   {formatBalance(holding.balance)}
                 </div>
               </div>
-              <div className="rounded-[4px] border border-white/[0.08] bg-[#010409] px-3 py-3">
+              <div className="rounded-[4px] border border-white/[0.08] bg-[#0B0F19] px-3 py-3">
                 <div className="text-[10px] font-extrabold uppercase tracking-[0.1em] text-white/40">
                   Value
                 </div>
@@ -180,7 +180,7 @@ export default function TokenDetailModal({ holding, cpBalance, onClose }: TokenD
                 href={jupiterUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="chrome-btn flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-extrabold transition-all"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] py-3.5 text-sm font-extrabold text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)] transition-all hover:bg-[#2563EB]"
               >
                 Buy / Sell
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -190,7 +190,7 @@ export default function TokenDetailModal({ holding, cpBalance, onClose }: TokenD
                   href={dexScreenerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-white/[0.08] bg-[#0F172A] py-3 text-[13px] font-bold text-white/50 transition-colors hover:border-white/[0.15] hover:text-white/70"
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] py-3 text-[13px] font-bold text-[#F9FAFB] transition-colors hover:border-[rgba(255,255,255,0.16)] hover:text-white"
                 >
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   DexScreener
@@ -198,7 +198,7 @@ export default function TokenDetailModal({ holding, cpBalance, onClose }: TokenD
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 rounded-xl border border-white/[0.08] bg-[#1E293B] py-3 text-[13px] font-bold text-white/50 transition-colors hover:border-white/[0.15] hover:text-white/70"
+                  className="flex-1 rounded-xl border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] py-3 text-[13px] font-bold text-[#F9FAFB] transition-colors hover:border-[rgba(255,255,255,0.16)] hover:text-white"
                 >
                   Close
                 </button>

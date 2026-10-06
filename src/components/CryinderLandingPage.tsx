@@ -95,25 +95,25 @@ export default function CryinderLandingPage({ onConnectClick, onLoginClick, onSi
         <Velaris
           height="auto"
           bg="#0a0c10"
-          colors={['#3b82f6', '#1d4ed8', '#172554', '#0a0c10']}
+          colors={['#3B82F6', '#60A5FA', '#1D4ED8', '#0a0c10']}
           speed={1.2}
           grain={0.25}
           className="border-b border-white/[0.06]"
         >
         <section className="mx-auto max-w-6xl px-5 pb-14 pt-16 text-center sm:pt-24">
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/[0.06] py-1.5 pl-3 pr-4 shadow-[0_0_24px_rgba(96,165,250,0.12)]">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/30 bg-[#3B82F6]/[0.08] py-1.5 pl-3 pr-4 shadow-[0_0_24px_rgba(59,130,246,0.25)]">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.9)]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3B82F6] opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3B82F6] shadow-[0_0_8px_rgba(59,130,246,0.9)]" />
             </span>
-            <span className="text-xs font-medium text-blue-200">
-              Live Terminal <span className="text-blue-400/50">•</span>{' '}
+            <span className="text-xs font-medium text-[#93C5FD]">
+              Live Terminal <span className="text-[#3B82F6]/60">•</span>{' '}
               <span className="font-mono tabular-nums">{liveTraders}+ Active Traders</span>
             </span>
           </div>
 
           <h1 className="mx-auto max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-[-0.03em] text-white sm:text-7xl">
-            Swipe. Discover. <span className="text-blue-700">Trade.</span>
+            Swipe. Discover. <span className="text-[#3B82F6]">Trade.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
             Swipe Solana memecoins and buy in under a second.
@@ -145,10 +145,10 @@ export default function CryinderLandingPage({ onConnectClick, onLoginClick, onSi
             <div className="flex items-center gap-1.5 border-b border-white/[0.06] px-4 py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
               <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-              <span className="h-2.5 w-2.5 rounded-full bg-blue-400/70" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#3B82F6]/80" />
               <span className="ml-3 font-mono text-[11px] text-zinc-500">cryinder — deck_feed</span>
-              <span className="ml-auto flex items-center gap-1.5 text-[11px] font-medium text-blue-400">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" /> LIVE
+              <span className="ml-auto flex items-center gap-1.5 text-[11px] font-medium text-[#60A5FA]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#3B82F6]" /> LIVE
               </span>
             </div>
             <div className="grid sm:grid-cols-[1.2fr_0.8fr]">
@@ -162,7 +162,7 @@ export default function CryinderLandingPage({ onConnectClick, onLoginClick, onSi
                     <div className="font-mono text-[11px] text-zinc-500">WIF / SOL · Raydium</div>
                   </div>
                   <div className="ml-auto text-right">
-                    <div className="font-mono text-lg font-semibold text-blue-400">+12.4%</div>
+                    <div className="font-mono text-lg font-semibold text-[#60A5FA]">+12.4%</div>
                     <div className="font-mono text-xs text-zinc-400">$2.4128</div>
                   </div>
                 </div>
@@ -333,7 +333,7 @@ export default function CryinderLandingPage({ onConnectClick, onLoginClick, onSi
                   <span className="font-mono text-5xl font-semibold tabular-nums tracking-tight text-white">{c.price}</span>
                   <span className="text-xs text-zinc-500">USDC</span>
                 </div>
-                <div className="mt-1 font-mono text-[11px] uppercase tracking-widest text-blue-400">
+                <div className="mt-1 font-mono text-[11px] uppercase tracking-widest text-[#60A5FA]">
                   {c.cadence}
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-zinc-400">{c.desc}</p>
@@ -401,7 +401,7 @@ export default function CryinderLandingPage({ onConnectClick, onLoginClick, onSi
               Find your next trade with one swipe.
             </h2>
             <p className="relative mx-auto mt-4 max-w-md text-sm leading-relaxed text-zinc-400">
-              Join <span className="font-mono tabular-nums text-blue-400">{activeUsers}</span> traders
+              Join <span className="font-mono tabular-nums text-[#60A5FA]">{activeUsers}</span> traders
               swiping Solana memecoins.
             </p>
             <button

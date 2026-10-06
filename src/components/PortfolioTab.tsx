@@ -29,7 +29,7 @@ interface PortfolioTabProps {
 
 function TableSkeleton() {
   return (
-    <div className="overflow-hidden rounded-md border border-white/[0.08] bg-[#131C2E]" aria-busy="true" aria-label="Loading tokens">
+    <div className="overflow-hidden rounded-md border border-white/[0.08] bg-[#111827]" aria-busy="true" aria-label="Loading tokens">
       {Array.from({ length: 5 }).map((_, i) => (
         <div key={i} className="flex items-center gap-3 border-b border-white/[0.06] px-4 py-4 last:border-0">
           <div className="navy-skeleton h-8 w-8 shrink-0 rounded-full" />
@@ -90,7 +90,7 @@ export default function PortfolioTab({
     return (
       <div className="space-y-4">
         <PortfolioHero metrics={metrics} loading />
-        <div className="h-[52px] rounded-sm border border-white/[0.08] bg-[#131C2E]" />
+        <div className="h-[52px] rounded-sm border border-white/[0.08] bg-[#111827]" />
         <TableSkeleton />
       </div>
     );
@@ -102,12 +102,12 @@ export default function PortfolioTab({
       <div className="space-y-4">
         <PortfolioHero metrics={metrics} loading={false} />
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center rounded-md border border-[#EF4444]/30 bg-[#EF4444]/[0.06] px-6 py-14 text-center">
-          <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#EF4444]/30 bg-[#EF4444]/[0.08]">
-            <AlertTriangle className="h-6 w-6 text-[#FCA5A5]" />
+          <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#EF4444]/30 bg-[rgba(239,68,68,0.12)]">
+            <AlertTriangle className="h-6 w-6 text-[#EF4444]" />
           </div>
-          <h3 className="text-base font-bold text-[#FCA5A5]">Failed to load portfolio</h3>
-          <p className="mb-6 mt-1 max-w-[300px] text-[13px] text-[#CBD5E1]">{error}</p>
-          <button onClick={onRetry} className="chrome-btn min-h-[44px] rounded-sm px-8 text-sm font-extrabold">
+          <h3 className="text-base font-bold text-[#EF4444]">Failed to load portfolio</h3>
+          <p className="mb-6 mt-1 max-w-[300px] text-[13px] text-[#E5E7EB]">{error}</p>
+          <button onClick={onRetry} className="min-h-[44px] rounded-sm bg-[#3B82F6] px-8 text-sm font-extrabold text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)] transition-colors hover:bg-[#2563EB]">
             Retry
           </button>
         </motion.div>
@@ -156,17 +156,17 @@ export default function PortfolioTab({
           key={view}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded-[4px] border border-white/[0.08] bg-[#0A1326] px-6 py-14 text-center"
+          className="rounded-[4px] border border-white/[0.08] bg-[#111827] px-6 py-14 text-center"
         >
           <h3 className="text-base font-bold text-white">
             No token activity yet
           </h3>
-          <p className="mx-auto mb-6 mt-1 max-w-[300px] text-[13px] text-[#8A9AB2]">
+          <p className="mx-auto mb-6 mt-1 max-w-[300px] text-[13px] text-[#9CA3AF]">
             Swaps, sends and receives for this wallet will stream in here.
           </p>
           <button
             onClick={onRefresh}
-            className="flex min-h-[40px] items-center gap-2 rounded-[3px] border border-white/[0.08] bg-[#0F1D33] px-5 py-2 text-xs font-bold text-white/70 transition-colors hover:text-white"
+            className="flex min-h-[40px] items-center gap-2 rounded-[3px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-5 py-2 text-xs font-bold text-[#F9FAFB] transition-colors hover:border-[rgba(255,255,255,0.16)] hover:text-white"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? 'animate-spin' : ''}`} />
             {refreshing ? 'Refreshing…' : 'Refresh'}
@@ -175,8 +175,8 @@ export default function PortfolioTab({
       ) : (
         <>
           {/* Search — glow focal state */}
-          <div className="search-glow relative rounded-[3px] border border-white/[0.08] bg-[#0A1326] transition-shadow">
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#8A9AB2]" />
+          <div className="search-glow relative rounded-[3px] border border-white/[0.08] bg-[#111827] transition-shadow">
+            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]" />
             <input
               type="text"
               value={query}
@@ -208,13 +208,13 @@ export default function PortfolioTab({
             <button
               onClick={onRefresh}
               disabled={refreshing}
-              className="flex items-center gap-2 rounded-[3px] border border-white/[0.08] bg-[#0A1326] px-5 py-2.5 text-xs font-bold text-white/60 transition-colors hover:text-white disabled:opacity-60"
+              className="flex items-center gap-2 rounded-[3px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-5 py-2.5 text-xs font-bold text-[#F9FAFB] transition-colors hover:border-[rgba(255,255,255,0.16)] hover:text-white disabled:opacity-60"
             >
               <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? 'animate-spin' : ''}`} />
               {refreshing ? 'Refreshing…' : 'Refresh'}
             </button>
             {time && (
-              <span className="tnum text-[11px] font-medium text-[#8A9AB2]">
+              <span className="tnum text-[11px] font-medium text-[#9CA3AF]">
                 {refreshing ? 'Updating…' : `Updated ${time}`}
               </span>
             )}
@@ -263,14 +263,14 @@ export default function PortfolioTab({
                   <li key={h.mint}>
                     <button
                       onClick={() => { setSendPickerOpen(false); setSendHolding(h); }}
-                      className="flex w-full items-center gap-3 rounded-[3px] border border-white/[0.06] bg-[#010409] px-3 py-2.5 text-left transition-colors hover:border-white/[0.14]"
+                      className="flex w-full items-center gap-3 rounded-[3px] border border-[rgba(255,255,255,0.08)] bg-[#0B0F19] px-3 py-2.5 text-left transition-colors hover:border-[rgba(59,130,246,0.4)]"
                     >
                       <TokenLogo src={h.logoUrl} alt={h.symbol} />
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-sm font-bold text-white">{h.symbol}</span>
-                        <span className="tnum block text-[11px] text-[#8A9AB2]">{h.balance.toLocaleString('en-US', { maximumFractionDigits: 4 })} available</span>
+                        <span className="tnum block text-[11px] text-[#9CA3AF]">{h.balance.toLocaleString('en-US', { maximumFractionDigits: 4 })} available</span>
                       </span>
-                      <span className="tnum text-[11px] font-bold text-[#8A9AB2]">→</span>
+                      <span className="tnum text-[11px] font-bold text-[#9CA3AF]">→</span>
                     </button>
                   </li>
                 ))}

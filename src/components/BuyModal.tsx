@@ -281,16 +281,16 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-sm rounded-3xl border border-white/10 bg-[#0a0a0b] p-6 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
+        className="w-full max-w-sm rounded-3xl border border-[rgba(255,255,255,0.08)] bg-[#111827] p-6 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
       >
         {/* Header */}
         <div className="mb-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-[#141414]">
+            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-[rgba(255,255,255,0.06)]">
               {token.logoUrl ? (
                 <img src={token.logoUrl} alt={token.symbol} className="h-8 w-8 object-contain" />
               ) : (
-                <span className="text-lg font-black text-white/30">{token.symbol[0]}</span>
+                <span className="text-lg font-black text-[#E5E7EB]">{token.symbol[0]}</span>
               )}
             </div>
             <div className="min-w-0">
@@ -316,9 +316,9 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
               initial={{ scale: 0.7, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/[0.08]"
+              className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-[#10B981]/30 bg-[rgba(16,185,129,0.12)]"
             >
-              <Check className="h-8 w-8 text-emerald-400" aria-hidden="true" />
+              <Check className="h-8 w-8 text-[#10B981]" aria-hidden="true" />
             </motion.div>
             <div className="mb-1 text-lg font-extrabold">Swap complete</div>
             <p className="mb-1 text-sm text-white/55">
@@ -341,7 +341,7 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
             </a>
             <button
               onClick={() => onConfirm(token)}
-              className="min-h-[48px] w-full rounded-2xl bg-[#C4B5A0] text-sm font-extrabold text-[#0a0a0b] transition-colors hover:bg-[#d4c8b5]"
+              className="min-h-[48px] w-full rounded-2xl bg-[#3B82F6] text-sm font-extrabold text-white transition-colors hover:bg-[#2563EB]"
             >
               Done
             </button>
@@ -397,7 +397,7 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
                         disabled={swapping}
                         className={`rounded-lg px-2.5 py-1 text-[11px] font-bold transition-colors disabled:opacity-40 ${
                           active
-                            ? 'bg-[#C4B5A0] text-[#0a0a0b]'
+                            ? 'bg-[#3B82F6] text-white'
                             : 'bg-white/[0.05] text-white/55 hover:bg-white/[0.09]'
                         }`}
                       >
@@ -411,12 +411,12 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
                 </span>
               </div>
               {insufficient && !tooSmall && (
-                <p className="mt-1.5 text-[11px] font-semibold text-[#E0827A]">
+                <p className="mt-1.5 text-[11px] font-semibold text-[#EF4444]">
                   Insufficient SOL for this amount.
                 </p>
               )}
               {firstBuyTooLow && !insufficient && (
-                <p className="mt-1.5 text-[11px] font-semibold text-[#E0827A]">
+                <p className="mt-1.5 text-[11px] font-semibold text-[#EF4444]">
                   For your first buy of this token you need at least {FIRST_BUY_MIN_SOL} SOL
                   to cover the swap, fee, gas and token account creation.
                 </p>
@@ -425,8 +425,8 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
 
             {/* High-risk warning (never buried behind the flip) */}
             {token.riskScore > 6 && (
-              <div className="mb-4 flex items-start gap-2 rounded-xl border border-[#E0827A]/20 bg-[#E0827A]/[0.04] px-3 py-2.5">
-                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#E0827A]" aria-hidden="true" />
+              <div className="mb-4 flex items-start gap-2 rounded-xl border border-[#EF4444]/30 bg-[rgba(239,68,68,0.12)] px-3 py-2.5">
+                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#EF4444]" aria-hidden="true" />
                 <span className="text-[11px] leading-relaxed text-white/60">
                   High risk token ({token.riskScore.toFixed(1)}/10). Price movements can be
                   extreme. Memecoins can lose value quickly.
@@ -458,7 +458,7 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
                 ) : quote && decimals == null ? (
                   <span className="text-sm font-medium text-white/40">Quoting…</span>
                 ) : (
-                  <span className="text-sm font-semibold text-[#E0827A]">{quoteError}</span>
+                  <span className="text-sm font-semibold text-[#EF4444]">{quoteError}</span>
                 )}
               </div>
 
@@ -541,7 +541,7 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
                           <span>Price impact</span>
                           <span
                             className={`tabular-nums ${
-                              priceImpactPct > 2 ? 'text-[#E0827A]' : 'text-white/65'
+                              priceImpactPct > 2 ? 'text-[#EF4444]' : 'text-white/65'
                             }`}
                           >
                             {priceImpactPct.toFixed(2)}%
@@ -586,7 +586,7 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
             <button
               onClick={handleBuy}
               disabled={buyDisabled}
-              className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-[#C4B5A0] text-[15px] font-extrabold text-[#0a0a0b] shadow-[0_4px_20px_rgba(196,181,160,0.18)] transition-all hover:bg-[#d4c8b5] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-[#3B82F6] text-[15px] font-extrabold text-white shadow-[0_4px_20px_rgba(59,130,246,0.35)] transition-all hover:bg-[#2563EB] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >
               {swapState === 'signing' && 'Approve in wallet…'}
               {swapState === 'executing' && 'Processing swap…'}
@@ -602,15 +602,15 @@ export default function BuyModal({ token, onConfirm, onClose, onSwapComplete }: 
             </button>
 
             {swapState === 'error' && swapError && (
-              <div className="mt-3 flex items-start gap-2 rounded-xl border border-[#E0827A]/20 bg-[#E0827A]/[0.04] px-3 py-2.5">
-                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#E0827A]" aria-hidden="true" />
+              <div className="mt-3 flex items-start gap-2 rounded-xl border border-[#EF4444]/30 bg-[rgba(239,68,68,0.12)] px-3 py-2.5">
+                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#EF4444]" aria-hidden="true" />
                 <span className="text-[11px] leading-relaxed text-white/65">{swapError}</span>
               </div>
             )}
 
             {(swapState === 'signing' || swapState === 'executing') && (
               <div className="mt-3 flex items-center justify-center gap-2 text-[11px] text-white/40">
-                <div className="h-3 w-3 rounded-full border-2 border-white/[0.08] border-t-[#C4B5A0] animate-spin" />
+                <div className="h-3 w-3 rounded-full border-2 border-white/[0.08] border-t-[#3B82F6] animate-spin" />
                 {swapState === 'signing' ? 'Waiting for wallet approval…' : 'Processing swap…'}
               </div>
             )}

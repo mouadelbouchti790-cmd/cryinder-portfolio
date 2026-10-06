@@ -58,12 +58,12 @@ export default function DashboardHeader({
           <TokenSearchBar
             onTokenSelect={onSearchSelect}
             placeholder="Search tokens…"
-            className="[&>div]:search-glow [&>div]:rounded-[3px] [&>div]:border-[rgba(255,255,255,0.08)] [&>div]:bg-[#0A1326] [&>div]:py-2.5"
+            className="[&>div]:search-glow [&>div]:rounded-[3px] [&>div]:border-[rgba(255,255,255,0.08)] [&>div]:bg-[#111827] [&>div]:py-2.5"
           />
         </div>
         <kbd
           aria-hidden="true"
-          className="hidden h-5 w-5 shrink-0 items-center justify-center rounded-[3px] border border-white/[0.08] bg-[#0F1D33] text-[11px] font-bold text-white/40 md:flex"
+          className="hidden h-5 w-5 shrink-0 items-center justify-center rounded-[3px] border border-white/[0.08] bg-[rgba(255,255,255,0.05)] text-[11px] font-bold text-white/40 md:flex"
         >
           /
         </kbd>
@@ -71,18 +71,18 @@ export default function DashboardHeader({
         {/* Right: network + metrics + wallet */}
         <div className="ml-auto flex shrink-0 items-center gap-2">
           <div
-            className="hidden items-center gap-1.5 rounded-[3px] border border-white/[0.08] bg-[#0A1326] px-3 py-1.5 lg:flex"
+            className="hidden items-center gap-1.5 rounded-[3px] border border-white/[0.08] bg-[#111827] px-3 py-1.5 lg:flex"
             title="Network status"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute h-full w-full animate-ping rounded-full bg-[#10B981] opacity-60" />
               <span className="h-2 w-2 rounded-full bg-[#10B981] ring-2 ring-black" />
             </span>
-            <span className="text-xs font-semibold text-[#CBD5E1]">{networkName}</span>
+            <span className="text-xs font-semibold text-[#E5E7EB]">{networkName}</span>
           </div>
 
           <div
-            className="hidden items-center gap-1.5 rounded-[3px] border border-white/[0.08] bg-[#0A1326] px-3 py-1.5 sm:flex"
+            className="hidden items-center gap-1.5 rounded-[3px] border border-white/[0.08] bg-[#111827] px-3 py-1.5 sm:flex"
             title="CP balance"
           >
             <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-white/40">CP</span>
@@ -92,8 +92,8 @@ export default function DashboardHeader({
           </div>
 
           {connected ? (
-            <div className="flex items-center gap-2 rounded-[3px] border border-white/[0.08] bg-[#0A1326] py-1.5 pl-1.5 pr-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-[3px] bg-[#0F1D33] font-mono text-[10px] font-bold text-[#E2E8F0]">
+            <div className="flex items-center gap-2 rounded-[3px] border border-white/[0.08] bg-[#111827] py-1.5 pl-1.5 pr-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded-[3px] bg-[rgba(255,255,255,0.06)] font-mono text-[10px] font-bold text-[#E5E7EB]">
                 {walletAddress!.slice(0, 2).toUpperCase()}
               </span>
               <span className="tnum font-mono text-xs font-semibold text-white/80">
@@ -112,7 +112,7 @@ export default function DashboardHeader({
           ) : (
             <button
               onClick={onConnect}
-              className="chrome-btn min-h-[40px] rounded-[3px] px-5 text-[13px] font-extrabold"
+              className="min-h-[40px] rounded-[3px] bg-[#3B82F6] px-5 text-[13px] font-extrabold text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)] transition-colors hover:bg-[#2563EB]"
             >
               Connect Wallet
             </button>

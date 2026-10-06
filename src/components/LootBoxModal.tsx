@@ -154,7 +154,7 @@ export default function LootBoxModal({ isOpen, onClose, userId, onPointsUpdated 
             role="dialog"
             aria-modal="true"
             aria-label="Loot Box"
-            className="relative w-full max-w-[400px] overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0a0a0a] shadow-[0_0_80px_rgba(245,158,11,0.15),0_20px_60px_rgba(0,0,0,0.5)]"
+            className="relative w-full max-w-[400px] overflow-hidden rounded-3xl border border-white/[0.08] bg-[#111827] shadow-[0_0_80px_rgba(245,158,11,0.15),0_20px_60px_rgba(0,0,0,0.5)]"
           >
             {/* Ambient top glow tinted by current tier during reveal */}
             <div
@@ -237,7 +237,7 @@ export default function LootBoxModal({ isOpen, onClose, userId, onPointsUpdated 
                       >
                         <div
                           className={`text-[13px] font-extrabold uppercase tracking-[0.14em] ${
-                            available ? 'text-emerald-400 animate-pulse' : 'text-white/35'
+                            available ? 'text-[#10B981] animate-pulse' : 'text-white/35'
                           }`}
                         >
                           {available ? 'Ready to open' : `Available in ${cooldownText}`}
@@ -457,7 +457,7 @@ export default function LootBoxModal({ isOpen, onClose, userId, onPointsUpdated 
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.96 }}
                       onClick={handleClose}
-                      className="mt-5 rounded-2xl border border-white/[0.12] bg-white/[0.06] px-10 py-3.5 text-base font-extrabold tracking-[-0.01em]"
+                      className="mt-5 rounded-2xl bg-[#3B82F6] px-10 py-3.5 text-base font-extrabold tracking-[-0.01em] text-white shadow-[0_4px_20px_rgba(59,130,246,0.4)] transition-colors hover:bg-[#2563EB]"
                     >
                       Claim
                     </motion.button>

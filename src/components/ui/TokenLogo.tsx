@@ -31,7 +31,7 @@ export default function TokenLogo({ src, alt, size = 'md', className = '' }: Tok
 
   return (
     <div
-      className={`flex shrink-0 items-center justify-center overflow-hidden border border-white/[0.04] bg-[#141414] ${SIZES[size]} ${className}`}
+      className={`flex shrink-0 items-center justify-center overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.06)] ${SIZES[size]} ${className}`}
     >
       {showImage ? (
         <img
@@ -42,7 +42,7 @@ export default function TokenLogo({ src, alt, size = 'md', className = '' }: Tok
           onError={() => setFailed(true)}
         />
       ) : (
-        <span className={`font-black text-white/15 ${LETTER_SIZES[size]}`}>
+        <span className={`font-black text-[#E5E7EB] ${LETTER_SIZES[size]}`}>
           {(alt?.[0] || '?').toUpperCase()}
         </span>
       )}

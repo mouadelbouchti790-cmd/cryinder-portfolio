@@ -11,20 +11,20 @@ interface PortfolioDataTableProps {
 
 export default function PortfolioDataTable({ holdings, onOpen }: PortfolioDataTableProps) {
   return (
-    <div className="overflow-hidden rounded-[4px] border border-white/[0.08] bg-[#0A1326]">
+    <div className="overflow-hidden rounded-[4px] border border-white/[0.08] bg-[#111827]">
       {/* Header — 5 cols, no curves */}
-      <div className="hidden grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-3 border-b border-white/[0.08] bg-[#010409] px-4 py-2.5 md:grid">
+      <div className="hidden grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-3 border-b border-[rgba(255,255,255,0.08)] bg-[#0B0F19] px-4 py-2.5 md:grid">
         {['Asset', 'Price', '24h', 'Holdings', 'Value'].map((c, i) => (
           <span
             key={c}
-            className={`text-[11px] font-bold uppercase tracking-[0.08em] text-[#8A9AB2] ${i >= 1 ? 'text-right' : 'text-left'}`}
+            className={`text-[11px] font-bold uppercase tracking-[0.08em] text-[#9CA3AF] ${i >= 1 ? 'text-right' : 'text-left'}`}
           >
             {c}
           </span>
         ))}
       </div>
 
-      <ul className="divide-y divide-white/[0.06]">
+      <ul className="divide-y divide-[rgba(255,255,255,0.08)]">
         {holdings.map((h, i) => {
           const pos = h.priceChange24h > 0;
           const neg = h.priceChange24h < 0;
@@ -38,7 +38,7 @@ export default function PortfolioDataTable({ holdings, onOpen }: PortfolioDataTa
             >
               <button
                 onClick={() => onOpen(h)}
-                className="grid w-full grid-cols-[1fr_auto] items-center gap-3 px-4 py-3 text-left transition-colors duration-120 hover:bg-[#0F1D33] focus-visible:bg-[#0F1D33] md:grid-cols-[2fr_1fr_1fr_1fr_1fr]"
+                className="grid w-full grid-cols-[1fr_auto] items-center gap-3 px-4 py-3 text-left transition-colors duration-120 hover:bg-[rgba(59,130,246,0.08)] focus-visible:bg-[rgba(59,130,246,0.08)] md:grid-cols-[2fr_1fr_1fr_1fr_1fr]"
                 aria-label={`Open ${h.name} details`}
               >
                 {/* Asset */}
@@ -46,7 +46,7 @@ export default function PortfolioDataTable({ holdings, onOpen }: PortfolioDataTa
                   <TokenLogo src={h.logoUrl} alt={h.symbol} />
                   <span className="min-w-0">
                     <span className="block truncate text-sm font-semibold text-white">{h.name}</span>
-                    <span className="block text-[11px] font-semibold uppercase tracking-wider text-[#8A9AB2]">
+                    <span className="block text-[11px] font-semibold uppercase tracking-wider text-[#9CA3AF]">
                       {h.symbol}
                     </span>
                   </span>
@@ -66,22 +66,22 @@ export default function PortfolioDataTable({ holdings, onOpen }: PortfolioDataTa
                 </span>
 
                 {/* Desktop cells */}
-                <span className="tnum hidden text-right text-sm text-[#CBD5E1] md:block">{formatPrice(h.priceUsd)}</span>
+                <span className="tnum hidden text-right text-sm text-[#E5E7EB] md:block">{formatPrice(h.priceUsd)}</span>
                 <span className="hidden justify-end md:flex">
                   <span
                     className={`tnum inline-flex min-w-[86px] items-center justify-center gap-1 rounded-[3px] border px-2 py-1 text-xs font-bold ${
                       flat
                         ? 'border-white/[0.08] bg-white/[0.03] text-white/50'
                         : pos
-                          ? 'border-[#10B981]/40 bg-[#10B981]/[0.12] text-[#10B981]'
-                          : 'border-[#EF4444]/40 bg-[#EF4444]/[0.12] text-[#EF4444]'
+                          ? 'border-[#10B981]/30 bg-[rgba(16,185,129,0.12)] text-[#10B981]'
+                          : 'border-[#EF4444]/30 bg-[rgba(239,68,68,0.12)] text-[#EF4444]'
                     }`}
                   >
                     {flat ? <Minus className="h-3 w-3" /> : pos ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowDownRight className="h-3.5 w-3.5" />}
                     {flat ? '0.00%' : formatChange(h.priceChange24h)}
                   </span>
                 </span>
-                <span className="tnum hidden text-right text-sm text-[#CBD5E1] md:block">{formatBalance(h.balance)}</span>
+                <span className="tnum hidden text-right text-sm text-[#E5E7EB] md:block">{formatBalance(h.balance)}</span>
                 <span className="tnum hidden text-right text-sm font-bold text-white md:block">{formatPrice(h.valueUsd)}</span>
               </button>
             </motion.li>

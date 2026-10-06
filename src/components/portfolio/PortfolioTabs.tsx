@@ -19,7 +19,7 @@ export default function PortfolioTabs({ active, onChange, counts }: PortfolioTab
     <div
       role="tablist"
       aria-label="Portfolio views"
-      className="flex gap-0.5 overflow-x-auto rounded-[4px] border border-white/[0.08] bg-[#0A1326] p-1"
+      className="flex gap-0.5 overflow-x-auto rounded-[4px] border border-white/[0.08] bg-[#111827] p-1"
     >
       {PORTFOLIO_VIEWS.map((v) => {
         const isActive = v.id === active;
@@ -31,14 +31,14 @@ export default function PortfolioTabs({ active, onChange, counts }: PortfolioTab
             aria-selected={isActive}
             onClick={() => onChange(v.id)}
             className={`relative flex min-h-[40px] shrink-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-[3px] px-3 text-[13px] font-semibold transition-colors duration-180 ${
-              isActive ? 'bg-[#16263F] text-white tab-active-sheen' : 'text-[#8A9AB2] hover:text-white'
+              isActive ? 'bg-[#3B82F6] text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)] tab-active-sheen' : 'text-[#9CA3AF] hover:text-[#3B82F6]'
             }`}
           >
             {isActive && (
               <>
                 <motion.span
                   layoutId="portfolio-tab-sheen"
-                  className="absolute inset-x-3 top-0 h-[2px] bg-[#E2E8F0]"
+                  className="absolute inset-x-3 top-0 h-[2px] bg-white/90"
                   transition={{ type: 'spring', stiffness: 500, damping: 35 }}
                 />
               </>

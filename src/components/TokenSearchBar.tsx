@@ -154,8 +154,8 @@ export default function TokenSearchBar({
   return (
     <div ref={containerRef} className={`relative w-full ${className}`}>
       <div
-        className={`flex items-center gap-3 rounded-[3px] border bg-[#0A1326] px-4 py-3 backdrop-blur-md transition-all ${
-          isFocused ? 'border-white/[0.14] shadow-[0_0_0_1px_rgba(255,255,255,0.14),0_0_24px_rgba(103,232,249,0.16)]' : 'border-white/[0.08]'
+        className={`flex items-center gap-3 rounded-[3px] border bg-[#111827] px-4 py-3 backdrop-blur-md transition-all ${
+          isFocused ? 'border-[#3B82F6]/40 shadow-[0_0_0_1px_rgba(59,130,246,0.35),0_0_24px_rgba(59,130,246,0.25)]' : 'border-white/[0.08]'
         }`}
       >
         {status === 'loading' ? (
@@ -194,7 +194,7 @@ export default function TokenSearchBar({
       )}
 
       {showDropdown && (
-        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-[4px] border border-white/[0.08] bg-[#0A1326] shadow-2xl">
+        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-[4px] border border-white/[0.08] bg-[#111827] shadow-2xl">
           {status === 'loading' && (
             <div className="flex items-center justify-center gap-2 px-4 py-6">
               <Loader2 size={16} className="animate-spin text-white/30" />

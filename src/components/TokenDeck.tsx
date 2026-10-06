@@ -681,7 +681,7 @@ export default function CryinderTokenDeck({
 
   return (
     <DeckErrorBoundary>
-      <div className={`flex min-h-[100dvh] flex-col overflow-hidden text-white ${showPortfolioHeader ? 'bg-[#010409]' : 'bg-[#050505]'}`}>
+      <div className={`flex min-h-[100dvh] flex-col overflow-hidden text-white ${showPortfolioHeader ? 'bg-[#0B0F19]' : 'bg-[#050505]'}`}>
         {showPortfolioHeader ? (
           <DashboardHeader
             walletAddress={walletAddress ?? (devBypass ? 'Dev111111111111111111111111111111111111111' : null)}
@@ -861,7 +861,7 @@ export default function CryinderTokenDeck({
                     {isActive && (
                       <motion.div
                         layoutId="tabUnderline"
-                        className="absolute bottom-0 left-[15%] right-[15%] h-0.5 rounded-sm bg-white"
+                        className="absolute bottom-0 left-[15%] right-[15%] h-0.5 rounded-sm bg-[#3B82F6] shadow-[0_0_12px_rgba(59,130,246,0.8)]"
                         transition={{ type: 'spring', stiffness: 500, damping: 35 }}
                       />
                     )}
@@ -877,7 +877,7 @@ export default function CryinderTokenDeck({
         )}
 
         {/* Main */}
-        <main className={`flex flex-1 ${mainView === 'portfolio' ? 'items-start justify-center bg-[#010409] px-4 py-6 sm:px-6' : 'items-center justify-center p-4'}`}>
+        <main className={`flex flex-1 ${mainView === 'portfolio' ? 'items-start justify-center bg-[#0B0F19] px-4 py-6 sm:px-6' : 'items-center justify-center p-4'}`}>
           <AnimatePresence mode="wait">
             {mainView === 'portfolio' ? (
               <motion.div
@@ -992,11 +992,11 @@ export default function CryinderTokenDeck({
             aria-label="Deck"
             aria-current={mainView === 'deck' ? 'page' : undefined}
             className={`flex min-h-[48px] min-w-[72px] cursor-pointer flex-col items-center justify-center gap-1 rounded-xl px-3 transition-colors active:scale-[0.96] ${
-              mainView === 'deck' ? 'bg-white/[0.04]' : 'hover:bg-white/[0.02]'
+              mainView === 'deck' ? 'bg-[#3B82F6]/[0.12]' : 'hover:bg-white/[0.02]'
             }`}
           >
-            <Layers className={`h-5 w-5 ${mainView === 'deck' ? 'text-white' : 'text-white/35'}`} aria-hidden="true" />
-            <span className={`text-[11px] font-semibold ${mainView === 'deck' ? 'text-white' : 'text-white/35'}`}>
+            <Layers className={`h-5 w-5 ${mainView === 'deck' ? 'text-[#3B82F6]' : 'text-white/35'}`} aria-hidden="true" />
+            <span className={`text-[11px] font-semibold ${mainView === 'deck' ? 'text-[#3B82F6]' : 'text-white/35'}`}>
               Deck
             </span>
           </button>
@@ -1007,11 +1007,11 @@ export default function CryinderTokenDeck({
             aria-label="Portfolio"
             aria-current={mainView === 'portfolio' ? 'page' : undefined}
             className={`flex min-h-[48px] min-w-[72px] cursor-pointer flex-col items-center justify-center gap-1 rounded-xl px-3 transition-colors active:scale-[0.96] ${
-              mainView === 'portfolio' ? 'bg-white/[0.04]' : 'hover:bg-white/[0.02]'
+              mainView === 'portfolio' ? 'bg-[#3B82F6]/[0.12]' : 'hover:bg-white/[0.02]'
             }`}
           >
-            <Wallet className={`h-5 w-5 ${mainView === 'portfolio' ? 'text-white' : 'text-white/35'}`} aria-hidden="true" />
-            <span className={`text-[11px] font-semibold ${mainView === 'portfolio' ? 'text-white' : 'text-white/35'}`}>
+            <Wallet className={`h-5 w-5 ${mainView === 'portfolio' ? 'text-[#3B82F6]' : 'text-white/35'}`} aria-hidden="true" />
+            <span className={`text-[11px] font-semibold ${mainView === 'portfolio' ? 'text-[#3B82F6]' : 'text-white/35'}`}>
               Portfolio
             </span>
           </button>

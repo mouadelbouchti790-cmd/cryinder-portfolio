@@ -238,7 +238,7 @@ export default function LeaderboardModal({
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
             onClick={(e) => e.stopPropagation()}
-            className="my-8 w-full max-w-2xl rounded-3xl border border-white/[0.08] bg-[#0a0a0b] shadow-[0_32px_64px_rgba(0,0,0,0.6)]"
+            className="my-8 w-full max-w-2xl rounded-3xl border border-[rgba(255,255,255,0.08)] bg-[#111827] shadow-[0_32px_64px_rgba(0,0,0,0.6)]"
           >
             {/* ── Header ──────────────────────────────────────────── */}
             <div className="flex items-center justify-between border-b border-white/[0.06] px-6 py-4">
@@ -268,7 +268,7 @@ export default function LeaderboardModal({
                     aria-selected={isActive}
                     onClick={() => setActiveTab(tab.id)}
                     className={`relative flex flex-1 items-center justify-center gap-1.5 px-2 py-3.5 text-sm font-semibold transition-colors ${
-                      isActive ? 'text-white' : 'text-white/40 hover:text-white/60'
+                      isActive ? 'text-white' : 'text-[#9CA3AF] hover:text-[#3B82F6]'
                     }`}
                   >
                     <tab.Icon className="h-3.5 w-3.5" aria-hidden="true" />
@@ -276,7 +276,7 @@ export default function LeaderboardModal({
                     {isActive && (
                       <motion.div
                         layoutId="leaderboard-tab-underline"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#3B82F6] shadow-[0_0_12px_rgba(59,130,246,0.8)]"
                       />
                     )}
                   </button>
